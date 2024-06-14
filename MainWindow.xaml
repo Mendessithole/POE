@@ -1,0 +1,165 @@
+﻿<Window x:Class="demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       
+        
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        
+        xmlns:local="clr-namespace:demo"
+        mc:Ignorable="d"
+        Title="Recipe App"
+        
+        Height="450"
+        Width="800"
+        
+          ResizeMode="NoResize"  
+        >
+
+
+    <Grid>
+
+        <!--grid for menu-->
+        <Grid  
+           Background="green"
+            Margin="0,0,680,0"
+          
+            
+            >
+
+            <!--create buttons-->
+            <Button
+       Margin="10,26,10,346"
+       Click="capture"
+                
+       >
+                Capture
+            </Button>
+
+
+            <Button 
+                
+                Margin="10,130,10,250"
+                Click="display"
+                >
+                Display
+            </Button>
+            <Button 
+                
+                Margin="10,231,10,149"
+                Click="filters"
+                Content="Filter"
+                />
+
+
+
+        </Grid>
+
+        <!--landing page grid-->
+        <Grid 
+          
+            Background="white"
+            Margin="120,0,0,0"
+            x:Name="mainpage"
+            >
+
+            <TextBlock
+                Margin="49,32,22,312"
+                FontSize="40"
+                
+                >
+                Welcome to Recipe Application
+
+            </TextBlock>
+            <!--text blog with image-->
+
+            <Image Source="/images/images.jpg"
+    Margin="147,134,0,128" HorizontalAlignment="Left" Width="238"
+                
+                />
+
+
+
+
+        </Grid>
+        <!--grid to capture-->
+        <Grid
+            x:Name="capturing"
+           Visibility="Hidden"
+           Background="#d9d9d9" 
+            Margin="120,0,0,0" 
+            
+            >
+
+            <TextBlock Margin="10,13,462,373"
+                
+                >Enter recipe name:
+            </TextBlock>
+
+            <TextBox x:Name="recipe_name" Margin="10,66,462,302" ></TextBox>
+
+
+            <TextBlock Margin="331,13,141,373"
+                
+                ><Run Text="Enter recipe quantity:"/></TextBlock>
+            <TextBox x:Name="recipe_quantity" Margin="331,66,141,302" />
+
+
+            <TextBlock Margin="10,164,462,222"
+                
+                ><Run Text="Enter recipe measurement:"/></TextBlock>
+            <TextBox x:Name="recipe_measurement" Margin="10,217,462,151" />
+
+
+            <TextBlock Margin="331,164,141,222"
+                
+                ><Run Text="choose recipe food group:"/></TextBlock>
+            <ComboBox x:Name="food_group" Margin="331,217,141,151" >
+
+                <ComboBoxItem Content="Vegetables and Fruits"/>
+                <ComboBoxItem Content="Dry beans ,Peas, Lentils and Soya"/>
+                <ComboBoxItem Content="Chicken, Fish, Meat and Eggs"/>
+                <ComboBoxItem Content="Milk and Dairy products"/>
+                <ComboBoxItem Content="Fats and Oil"/>
+                <ComboBoxItem Content="Water"/>
+
+                <ComboBoxItem Content="Starchy food"/>
+            </ComboBox>
+
+            <Button Margin="12,319,372,26" Click="save" Background="green">
+                Submit Recipe
+
+            </Button>
+
+
+
+
+
+        </Grid>
+        <!--display grid-->
+        <Grid
+            Visibility="Hidden"
+            x:Name="display_all"
+            Background="Gray"
+            Margin="120,0,0,0"
+            >
+            <ListView x:Name="add_all" Margin="131,22,81,40"  ></ListView>
+        </Grid>
+
+        <!---grid for live chart-->
+
+        <Grid
+           Visibility="Hidden" 
+                 x:Name="onpie" Margin="116,0,10,0">
+
+
+            <lvc:PieChart Series="{Binding SeriesCollection}" Cursor="Hand" LegendLocation="Left" InnerRadius="130" Hoverable="True"></lvc:PieChart>
+            <Button Click="check_pie" Content="View" HorizontalAlignment="Left" Margin="18,31,0,0" VerticalAlignment="Top" Width="102" Height="45" />
+
+
+        </Grid>
+
+
+    </Grid>
+</Window>
