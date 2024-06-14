@@ -1,5 +1,8 @@
+https://github.com/Mendessithole/POE
+
 # POE
-UPDATES OR CHANGES MADE I have updated my application to have a graphical user interface (GUI), built using Windows Presentation Foundation (WPF), The user shall be able to filter the list of recipes by: a. entering the name of an ingredient that must be in the recipe, b. choosing a food group that must be in the recipe And also the user can view displays a pie chart showing the percentage that each food group makes up of the total menu.
+# UPDATES OR CHANGES MADE
+I have updated my application to have a graphical user interface (GUI), built using Windows Presentation Foundation (WPF), The user shall be able to filter the list of recipes by: a. entering the name of an ingredient that must be in the recipe, b. choosing a food group that must be in the recipe And also the user can view displays a pie chart showing the percentage that each food group makes up of the total menu.
 
 How to Run from GitHub in Visual Studio: Clone the Repository:
 
